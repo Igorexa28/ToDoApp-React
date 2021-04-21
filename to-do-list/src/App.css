@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.mainContent {
+  height: 500px;
+  width: 700px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+.mainContent .header {
+  padding-top: 10px;
+  text-align: center;
+  font-weight: light;
+}
+.mainContent hr {
+  width: 100%;
+  border: 2px solid black;
+}/*# sourceMappingURL=App.css.map */
