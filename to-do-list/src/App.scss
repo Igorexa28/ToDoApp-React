@@ -4,27 +4,110 @@
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-@mixin size($height: 100px, $width: 200px) {
+html,
+body {
+    background-color: #000000;
+}
+
+@mixin size ($height: 100px, $width: 200px) {
     height: $height;
     width: $width;
 }
 
-.mainContent {
-    @include size(500px, 700px);
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid black;
-    border-radius: 20px;
+@mixin font ($color: $colorText, $fontSize: 32px) {
+    font-weight: $fontWeight;
+    font-family: $fontFamily;
+    color: $color;
+    font-size: $fontSize;
+}
 
-    .header {
-        padding-top: 10px;
-        text-align: center;
-        font-weight: light;
-    }
+#main {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    background-color: red;
 
-    hr {
-        width: 100%;
-        border: 2px solid black;
+    .mainContent {
+        @include size(auto, 700px);
+        margin-top: 100px;
+        border: 2px solid #0E1220;
+        background-color: #40AB7E;
+        box-shadow: 0px 4px 0px 0px #0E1220;
+        z-index: 3;
+
+        .header {
+            padding-top: 10px;
+            text-align: center;
+            font-weight: light;
+            color: #0E1220;
+        }
+
+        hr {
+            width: 100%;
+            border: 2px solid black;
+        }
+
+        .searchPanel {
+            margin-bottom: 20px;
+
+            .taskName {
+                height: 38px;
+                width: 400px;
+                margin-right: 40px;
+                margin-left: 40px;
+                padding-left: 8px;
+                border-radius: 30px;
+                border: 1px solid #0E1220;
+                box-shadow: 1px 2px 0px 0px #0E1220;
+
+                &:focus {
+                    outline: none;
+                    transition: all .2s linear;
+                    box-shadow: 3px 4px 0px 0px #0E1220;
+                }
+
+                &:not(:focus) {
+                    transition: all .2s linear;
+                    box-shadow: 1px 2px 0px 0px #0E1220;
+                }
+            }
+
+            #addBtn {
+                @include size($width: 175px, $height: 40px);
+                background-color: #7CBA72;
+                border-radius: 30px;
+                border: 1px solid black;
+                margin-top: -3px;
+
+                &:hover {
+                    transition: all .2s linear;
+                    box-shadow: 0 0 0 2px #7CBA72, 0 0 0 4px #0E1220;
+                }
+
+                &:not(:focus) {
+                    transition: all .2s linear;
+                }
+            }
+        }
+
+        .task-container {
+            display: flex;
+            width: 670px;
+            height: auto;
+            margin-bottom: 20px;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+
+            .task-text {
+                height: 50px;
+                margin-top: 10px;
+                padding-top: 9px;
+                padding-left: 15px;
+                font-size: 20px;
+                font-weight: 400px;
+            }
+        }
     }
 }
