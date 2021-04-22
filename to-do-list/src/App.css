@@ -18,10 +18,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  background-color: red;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #000000;
+  margin-bottom: 100px;
 }
 #main .mainContent {
   height: auto;
@@ -34,6 +34,7 @@ body {
   z-index: 3;
 }
 #main .mainContent .header {
+  text-shadow: 7px 5px 5px #0E1220;
   padding-top: 10px;
   text-align: center;
   font-weight: light;
@@ -48,10 +49,11 @@ body {
 }
 #main .mainContent .searchPanel .taskName {
   height: 38px;
-  width: 400px;
+  width: 440px;
+  font-size: 19px;
   margin-right: 40px;
-  margin-left: 40px;
-  padding-left: 8px;
+  margin-left: 10px;
+  padding-left: 10px;
   border-radius: 30px;
   border: 1px solid #0E1220;
   -webkit-box-shadow: 1px 2px 0px 0px #0E1220;
@@ -70,21 +72,22 @@ body {
   -webkit-box-shadow: 1px 2px 0px 0px #0E1220;
           box-shadow: 1px 2px 0px 0px #0E1220;
 }
-#main .mainContent .searchPanel #addBtn {
+#main .mainContent .searchPanel .addBtn {
   height: 40px;
-  width: 175px;
+  width: 185px;
   background-color: #7CBA72;
   border-radius: 30px;
-  border: 1px solid black;
+  border: 1.5px solid #0E1220;
   margin-top: -3px;
+  font-size: 18px;
 }
-#main .mainContent .searchPanel #addBtn:hover {
+#main .mainContent .searchPanel .addBtn:hover {
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
   -webkit-box-shadow: 0 0 0 2px #7CBA72, 0 0 0 4px #0E1220;
           box-shadow: 0 0 0 2px #7CBA72, 0 0 0 4px #0E1220;
 }
-#main .mainContent .searchPanel #addBtn:not(:focus) {
+#main .mainContent .searchPanel .addBtn:not(:focus) {
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
@@ -92,9 +95,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 670px;
+  width: 97%;
   height: auto;
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -105,12 +110,61 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 2px solid #0E1220;
+  border-radius: 13px;
+  -webkit-box-shadow: 2px 2px 2px 0px #0E1220;
+          box-shadow: 2px 2px 2px 0px #0E1220;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+#main .mainContent .task-container:hover {
+  -webkit-box-shadow: 2px 4px 2px 0px #0E1220;
+          box-shadow: 2px 4px 2px 0px #0E1220;
 }
 #main .mainContent .task-container .task-text {
   height: 50px;
   margin-top: 10px;
   padding-top: 9px;
   padding-left: 15px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400px;
+}
+#main .mainContent .task-container .task-text + div .btn-dark {
+  margin-right: 20px;
+  background-color: #7CBA72;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-box-shadow: 1px 1px 3px 1px #0E1220;
+          box-shadow: 1px 1px 3px 1px #0E1220;
+}
+#main .mainContent .task-container .task-text + div .btn-danger {
+  margin-right: 20px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-box-shadow: 1px 1px 3px 1px #661008;
+          box-shadow: 1px 1px 3px 1px #661008;
+}
+#main #result .completedTasks {
+  height: 250px;
+  width: 500px;
+  background-color: aqua;
+  margin-top: 100px;
+  border: 2px solid #0E1220;
+}
+#main #result .completedTasks .task-type {
+  margin-top: 5px;
+  font-size: 24px;
+  text-align: center;
+}
+#main #result .failedTasks {
+  height: 250px;
+  width: 500px;
+  background-color: green;
+  margin-top: 100px;
+  border: 2px solid #0E1220;
+}
+#main #result .failedTasks .task-type {
+  margin-top: 5px;
+  font-size: 24px;
+  text-align: center;
 }/*# sourceMappingURL=App.css.map */

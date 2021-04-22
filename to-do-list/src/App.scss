@@ -25,8 +25,9 @@ body {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
-    background-color: red;
+    justify-content: space-around;
+    background-color: #000000;
+    margin-bottom: 100px;
 
     .mainContent {
         @include size(auto, 700px);
@@ -37,6 +38,7 @@ body {
         z-index: 3;
 
         .header {
+            text-shadow: 7px 5px 5px #0E1220;
             padding-top: 10px;
             text-align: center;
             font-weight: light;
@@ -53,10 +55,11 @@ body {
 
             .taskName {
                 height: 38px;
-                width: 400px;
+                width: 440px;
+                font-size: 19px;
                 margin-right: 40px;
-                margin-left: 40px;
-                padding-left: 8px;
+                margin-left: 10px;
+                padding-left: 10px;
                 border-radius: 30px;
                 border: 1px solid #0E1220;
                 box-shadow: 1px 2px 0px 0px #0E1220;
@@ -73,12 +76,13 @@ body {
                 }
             }
 
-            #addBtn {
-                @include size($width: 175px, $height: 40px);
+            .addBtn {
+                @include size($width: 185px, $height: 40px);
                 background-color: #7CBA72;
                 border-radius: 30px;
-                border: 1px solid black;
+                border: 1.5px solid #0E1220;
                 margin-top: -3px;
+                font-size: 18px;
 
                 &:hover {
                     transition: all .2s linear;
@@ -93,20 +97,80 @@ body {
 
         .task-container {
             display: flex;
-            width: 670px;
+            width: 97%;
             height: auto;
             margin-bottom: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
             flex-flow: row wrap;
             justify-content: space-between;
             align-items: center;
+            border: 2px solid #0E1220;
+            border-radius: 13px;
+            box-shadow: 2px 2px 2px 0px #0E1220;
+            transition: all 0.1s linear;
+
+            &:hover {       
+                box-shadow: 2px 4px 2px 0px #0E1220;
+            }
 
             .task-text {
                 height: 50px;
                 margin-top: 10px;
                 padding-top: 9px;
                 padding-left: 15px;
-                font-size: 20px;
+                font-size: 22px;
                 font-weight: 400px;
+
+                & + div .btn-dark  {
+                    margin-right: 20px;
+                    background-color: #7CBA72;
+                    transition: all .2s linear;
+                    box-shadow: 1px 1px 3px 1px #0E1220;
+                }
+
+                & + div .btn-danger {
+                    margin-right: 20px;
+                    transition: all .2s linear;
+                    box-shadow: 1px 1px 3px 1px #661008;
+                }
+            }
+        }
+    }
+
+    #result {
+
+        .completedTasks {
+            @include size ($height: 250px, $width: 500px);
+            background-color: aqua;
+            margin-top: 100px;
+            border: 2px solid #0E1220;
+
+            .task-type {
+                margin-top: 5px;
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .hor_line {
+                
+            }
+        }
+        
+        .failedTasks {
+            @include size ($height: 250px, $width: 500px);
+            background-color: green;
+            margin-top: 100px;
+            border: 2px solid #0E1220;
+
+            .task-type {
+                margin-top: 5px;
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .hor_line {
+
             }
         }
     }
