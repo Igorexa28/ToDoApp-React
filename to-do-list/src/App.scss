@@ -142,6 +142,8 @@ body {
 
         .completedTasks {
             @include size ($height: 250px, $width: 500px);
+            display: flex;
+            flex-flow: column wrap;
             background-color: aqua;
             margin-top: 100px;
             border: 2px solid #0E1220;
@@ -153,12 +155,25 @@ body {
             }
 
             .hor_line {
-                
+                width: 100%;
+                opacity: 0.4;
+                border: 2px solid black; 
+                margin-top: 3px;
+            }
+
+            .task-closed {
+                @include size ($height: auto, $width: 98%);
+                margin-left: 10px;
+                margin-right: 10px;
+                border: 1px solid black;
+                white-space: nowrap;
             }
         }
         
         .failedTasks {
             @include size ($height: 250px, $width: 500px);
+            display: flex;
+            flex-flow: column nowrap;
             background-color: green;
             margin-top: 100px;
             border: 2px solid #0E1220;
@@ -170,7 +185,18 @@ body {
             }
 
             .hor_line {
+                width: 100%;
+                opacity: 0.4;
+                border: 2px solid black;
+                margin-top: 3px;
+            }
 
+            .task-closed {
+                @include size ($height: auto, $width: 98%);
+                margin-left: 10px;
+                margin-right: 10px;
+                border: 1px solid black;
+                white-space: nowrap;
             }
         }
     }
