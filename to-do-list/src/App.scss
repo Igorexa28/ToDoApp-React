@@ -1,5 +1,5 @@
 $borderColor: #0E1220;
-$backgroundColorMain: #40AB7E;
+$backgroundColorMain: #5ec399;
 $boxTextShadow: #0E1220;
 
 * {
@@ -36,10 +36,10 @@ body {
     .mainContent {
         @include size(auto, 700px);
         margin-top: 100px;
+        border-radius: 13px;
         border: 2px solid $borderColor;
-        background-color: #40AB7E;
+        background-color: $backgroundColorMain;
         box-shadow: 0px 4px 0px 0px $boxTextShadow;
-        z-index: 3;
 
         .header {
             text-shadow: 7px 5px 5px $boxTextShadow;
@@ -82,7 +82,8 @@ body {
 
             .addBtn {
                 @include size($width: 185px, $height: 40px);
-                background-color: #7CBA72;
+                background-color: #427e37;
+                color: #fff;
                 border-radius: 30px;
                 border: 1.5px solid $borderColor;
                 margin-top: -3px;
@@ -90,11 +91,27 @@ body {
 
                 &:hover {
                     transition: all .2s linear;
-                    box-shadow: 0 0 0 2px #7CBA72, 0 0 0 4px $boxTextShadow;
+                    box-shadow: 0 0 0 2px #427e37, 0 0 0 4px $boxTextShadow;
                 }
 
                 &:not(:focus) {
                     transition: all .2s linear;
+                }
+            }
+
+            @media all and (max-width: 692px) {
+
+                .taskName {
+                    width: 97%;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+
+                .addBtn {
+                    width: 97%;
+                    margin-top: 10px;
+                    margin-left: 10px;
+                    margin-right: 10px;
                 }
             }
         }
@@ -114,7 +131,7 @@ body {
             box-shadow: 2px 2px 2px 0px $boxTextShadow;
             transition: all 0.1s linear;
 
-            &:hover {       
+            &:hover {
                 box-shadow: 2px 4px 2px 0px $boxTextShadow;
             }
 
@@ -126,82 +143,117 @@ body {
                 font-size: 22px;
                 font-weight: 400px;
 
-                & + div .btn-dark  {
+                &+div .btn-dark {
                     margin-right: 20px;
-                    background-color: #7CBA72;
+                    background-color: #427e37;
                     transition: all .2s linear;
                     box-shadow: 1px 1px 3px 1px $boxTextShadow;
                 }
 
-                & + div .btn-danger {
+                &+div .btn-danger {
                     margin-right: 20px;
                     transition: all .2s linear;
                     box-shadow: 1px 1px 3px 1px #661008;
+                    background-image: linear-gradient(to top, #6d114a 0, #f1824d 0, #f16236 47%, #eb482d 100%);
                 }
             }
         }
     }
 
     #result {
+        @include size(auto, 700px);
 
         .completedTasks {
-            @include size ($height: auto, $width: 700px);
+            @include size ($height: 390px, $width: 100%);
             display: flex;
             flex-flow: column wrap;
-            justify-content: flex-start;
-            background-color: aqua;
+            justify-content: flex-start; 
             margin-top: 100px;
+            border-radius: 13px;
+            transition: all 0.1s linear;
             border: 2px solid $borderColor;
+            background-color: $backgroundColorMain;
+            box-shadow: 2px 2px 2px 0px $boxTextShadow;
 
             .task-type {
                 margin-top: 5px;
                 font-size: 24px;
                 text-align: center;
+                font-weight: bold;
+                text-shadow: 2px 3px 7px $boxTextShadow;
             }
 
             .hor_line {
                 width: 100%;
                 opacity: 0.4;
-                border: 2px solid black; 
                 margin-top: 3px;
+                border: 2px solid black;
             }
 
             .task-closed {
-                @include size ($height: auto, $width: 50%);
-                margin-left: 10px;
-                margin-right: 10px;
-                border: 1px solid black;
-                white-space: nowrap;
+                @include size ($height: 38px, $width: 97%);
+                margin-top: 6px;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 17px;
+                padding-top: 6px;
+                padding-left: 10px;
+                border-radius: 13px;
+                padding-bottom: -5px;
+                transition: all 0.1s linear;
+                border: 1px solid $borderColor;
+                box-shadow: 2px 2px 2px 0px $boxTextShadow;
+
+                &:hover {
+                    box-shadow: 3px 3px 2px 0px $boxTextShadow;
+                }
             }
         }
-        
+
         .failedTasks {
-            @include size ($height: 250px, $width: 700px);
+            @include size ($height: 390px, $width: 700px);
             display: flex;
+            margin-top: 50px;
+            border-radius: 13px;
             flex-flow: column wrap;
-            background-color: green;
-            margin-top: 100px;
             border: 2px solid $borderColor;
+            background-image: linear-gradient(to top, #6d114a 0, #f1824d 0, #ee653d 47%, #eb482d 100%);
 
             .task-type {
+                display: inline-block;
                 margin-top: 5px;
                 font-size: 24px;
                 text-align: center;
+                font-weight: bold;
+                text-shadow: 2px 3px 7px $boxTextShadow;
             }
+
 
             .hor_line {
                 width: 100%;
                 opacity: 0.4;
-                border: 2px solid black;
                 margin-top: 3px;
+                border: 2px solid black;
             }
 
             .task-closed {
-                @include size ($height: auto, $width: 98%);
-                margin-left: 10px;
-                margin-right: 10px;
+                @include size ($height: 38px, $width: 97%);
+                color: black;
+                font-size: 19px;
+                margin-top: 6px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 10px;
+                padding-top: 6px;
+                border-radius: 13px;
+                padding-bottom: -5px;
+                transition: all 0.1s linear;
                 border: 1px solid $borderColor;
-                white-space: nowrap;
+                box-shadow: 2px 2px 2px 0px $boxTextShadow;
+
+                &:hover {
+                    box-shadow: 3px 3px 2px 0px $boxTextShadow;
+                }
             }
         }
     }
