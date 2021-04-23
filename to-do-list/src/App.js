@@ -92,7 +92,7 @@ class App extends React.Component {
       </div>
       <div id="result">
         <div className="completedTasks">
-          <h3 className="task-type">Completed tasks</h3>
+          <h3 className="task-type">Completed tasks</h3> quantity<span>{this.state.completed.length}</span>
             <hr className="hor_line" />
               {completedTasks}
         </div>

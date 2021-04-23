@@ -1,3 +1,7 @@
+$borderColor: #0E1220;
+$backgroundColorMain: #40AB7E;
+$boxTextShadow: #0E1220;
+
 * {
     margin: 0;
     padding: 0;
@@ -32,13 +36,13 @@ body {
     .mainContent {
         @include size(auto, 700px);
         margin-top: 100px;
-        border: 2px solid #0E1220;
+        border: 2px solid $borderColor;
         background-color: #40AB7E;
-        box-shadow: 0px 4px 0px 0px #0E1220;
+        box-shadow: 0px 4px 0px 0px $boxTextShadow;
         z-index: 3;
 
         .header {
-            text-shadow: 7px 5px 5px #0E1220;
+            text-shadow: 7px 5px 5px $boxTextShadow;
             padding-top: 10px;
             text-align: center;
             font-weight: light;
@@ -61,18 +65,18 @@ body {
                 margin-left: 10px;
                 padding-left: 10px;
                 border-radius: 30px;
-                border: 1px solid #0E1220;
-                box-shadow: 1px 2px 0px 0px #0E1220;
+                border: 1px solid $borderColor;
+                box-shadow: 1px 2px 0px 0px $boxTextShadow;
 
                 &:focus {
                     outline: none;
                     transition: all .2s linear;
-                    box-shadow: 3px 4px 0px 0px #0E1220;
+                    box-shadow: 3px 4px 0px 0px $boxTextShadow;
                 }
 
                 &:not(:focus) {
                     transition: all .2s linear;
-                    box-shadow: 1px 2px 0px 0px #0E1220;
+                    box-shadow: 1px 2px 0px 0px $boxTextShadow;
                 }
             }
 
@@ -80,13 +84,13 @@ body {
                 @include size($width: 185px, $height: 40px);
                 background-color: #7CBA72;
                 border-radius: 30px;
-                border: 1.5px solid #0E1220;
+                border: 1.5px solid $borderColor;
                 margin-top: -3px;
                 font-size: 18px;
 
                 &:hover {
                     transition: all .2s linear;
-                    box-shadow: 0 0 0 2px #7CBA72, 0 0 0 4px #0E1220;
+                    box-shadow: 0 0 0 2px #7CBA72, 0 0 0 4px $boxTextShadow;
                 }
 
                 &:not(:focus) {
@@ -105,13 +109,13 @@ body {
             flex-flow: row wrap;
             justify-content: space-between;
             align-items: center;
-            border: 2px solid #0E1220;
+            border: 2px solid $borderColor;
             border-radius: 13px;
-            box-shadow: 2px 2px 2px 0px #0E1220;
+            box-shadow: 2px 2px 2px 0px $boxTextShadow;
             transition: all 0.1s linear;
 
             &:hover {       
-                box-shadow: 2px 4px 2px 0px #0E1220;
+                box-shadow: 2px 4px 2px 0px $boxTextShadow;
             }
 
             .task-text {
@@ -126,7 +130,7 @@ body {
                     margin-right: 20px;
                     background-color: #7CBA72;
                     transition: all .2s linear;
-                    box-shadow: 1px 1px 3px 1px #0E1220;
+                    box-shadow: 1px 1px 3px 1px $boxTextShadow;
                 }
 
                 & + div .btn-danger {
@@ -141,12 +145,13 @@ body {
     #result {
 
         .completedTasks {
-            @include size ($height: 250px, $width: 500px);
+            @include size ($height: auto, $width: 700px);
             display: flex;
             flex-flow: column wrap;
+            justify-content: flex-start;
             background-color: aqua;
             margin-top: 100px;
-            border: 2px solid #0E1220;
+            border: 2px solid $borderColor;
 
             .task-type {
                 margin-top: 5px;
@@ -162,7 +167,7 @@ body {
             }
 
             .task-closed {
-                @include size ($height: auto, $width: 98%);
+                @include size ($height: auto, $width: 50%);
                 margin-left: 10px;
                 margin-right: 10px;
                 border: 1px solid black;
@@ -171,12 +176,12 @@ body {
         }
         
         .failedTasks {
-            @include size ($height: 250px, $width: 500px);
+            @include size ($height: 250px, $width: 700px);
             display: flex;
-            flex-flow: column nowrap;
+            flex-flow: column wrap;
             background-color: green;
             margin-top: 100px;
-            border: 2px solid #0E1220;
+            border: 2px solid $borderColor;
 
             .task-type {
                 margin-top: 5px;
@@ -195,7 +200,7 @@ body {
                 @include size ($height: auto, $width: 98%);
                 margin-left: 10px;
                 margin-right: 10px;
-                border: 1px solid black;
+                border: 1px solid $borderColor;
                 white-space: nowrap;
             }
         }
