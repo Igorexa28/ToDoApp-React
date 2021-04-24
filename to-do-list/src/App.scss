@@ -130,6 +130,7 @@ body {
             border-radius: 13px;
             box-shadow: 2px 2px 2px 0px $boxTextShadow;
             transition: all 0.1s linear;
+            word-break: break-all;
 
             &:hover {
                 box-shadow: 2px 4px 2px 0px $boxTextShadow;

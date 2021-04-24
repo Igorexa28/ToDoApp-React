@@ -17,12 +17,21 @@ class App extends React.Component {
   }
 
   handleClick() {
-    if (this.state.task.length !== 0) {
-      this.state.tasks.push(this.state.task);
-    } else {
-      this.state.tasks.push('Nothing was added here...');
+    let copyArray = [], result = [];
+    this.state.tasks.push(this.state.task);
+
+    copyArray =  [...this.state.tasks];
+
+    for (let i = 0; i < copyArray.length; i++) {
+      let element = copyArray[i];
+      
+      if (element !== '') {
+        result.push(element);
+      } else {
+        alert('Please, enter your task!');
+      }
     }
-    this.setState({tasks: this.state.tasks});
+    this.setState({tasks: result});
     this.setState({task: ''});
   }
 
@@ -91,7 +100,7 @@ class App extends React.Component {
         <hr />
         <div className="searchPanel">
           <input type="text" id="taskName" className="taskName" value={this.state.task} onChange={this.handleChange} placeholder="Enter your task here..." />
-          <Button type="submit" className="addBtn" handleClick={this.handleClick}>Add task</Button>
+          <Button type="submit" className="addBtn" handleClick={this.handleClick} >Add task</Button>
         </div>
         <div id="tasks">
           {tasksToDo}
