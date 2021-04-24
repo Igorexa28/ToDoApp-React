@@ -23,6 +23,12 @@ const SecondApp = () => {
             </div>
             <div id="result">
                 <div className="completedTasks">
+                    <h3 className="task-type">Completed tasks: <span className="quantity">{completed.length}</span></h3>
+                        <hr className="hor_line" />
+                        {}
+                </div>
+                <div className="failedTasks">
+                    <h3 className="task-type">Failed tasks: <span className="quantity">{failed.length}</span></h3>
                 </div>
             </div>
         </div>
